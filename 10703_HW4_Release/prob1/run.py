@@ -174,11 +174,11 @@ class ExperimentModelDynamics:
 
 
 def test_cem_gt_dynamics(num_episode=50):
-    # log.info("### Q1.1.1: CEM (without MPC)")
-    # mpc_params = {'use_mpc': False, 'num_particles': 1}
-    # exp = ExperimentGTDynamics(env_name="Pushing2D-v1", mpc_params=mpc_params)
-    # avg_reward, avg_success = exp.test(num_episode, optimizer="cem")
-    # log.info("CEM PushingEnv: avg_reward: {}, avg_success: {}".format(avg_reward, avg_success))
+    log.info("### Q1.1.1: CEM (without MPC)")
+    mpc_params = {'use_mpc': False, 'num_particles': 1}
+    exp = ExperimentGTDynamics(env_name="Pushing2D-v1", mpc_params=mpc_params)
+    avg_reward, avg_success = exp.test(num_episode, optimizer="cem")
+    log.info("CEM PushingEnv: avg_reward: {}, avg_success: {}".format(avg_reward, avg_success))
 
     log.info("### Q1.1.2: Random Policy (without MPC)")
     mpc_params = {"use_mpc": False, "num_particles": 1}
@@ -275,7 +275,7 @@ if __name__ == "__main__":
     torch.backends.cudnn.deterministic = True
     gpu_number = 0
     # device = torch.device('cuda:%d' % gpu_number if torch.cuda.is_available() else 'cpu')
-    device = torch.device('cpu')
+    # device = torch.device('cpu')
     # import ipdb; ipdb.set_trace()
     # test_cem_gt_dynamics(50)    # Q1.1
     train_single_dynamics(50, device=device)   # Q1.2

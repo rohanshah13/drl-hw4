@@ -89,8 +89,8 @@ class PENN(nn.Module):
         """
         # TODO: write your code here
         # Create data loader
-        import ipdb
-        ipdb.set_trace()
+        # import ipdb
+        # ipdb.set_trace()
         inputs = torch.tensor(inputs, device=self.device, dtype=torch.float)
         targets = torch.tensor(targets, device=self.device, dtype=torch.float)
         dataset = torch.utils.data.TensorDataset(inputs, targets)
